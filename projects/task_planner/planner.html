@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Planner App</title>
+
+    <!-- Planner Theme CSS -->
+    <link rel="stylesheet" href="planner.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== App Header ===== -->
+    <header class="app-header">
+      <div class="header-content">
+        <div class="header-text">
+          <h1>Task Planner</h1>
+          <p>Organize daily tasks and track progress efficiently</p>
+        </div>
+
+        <div class="profile-icon">
+          <i class="fa-solid fa-user" onclick="openAuth()"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Auth Overlay -->
+    <div class="auth-overlay" id="authOverlay">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h2 id="authTitle">Login</h2>
+          <i class="fa-solid fa-xmark close-btn" onclick="closeAuth()"></i>
+        </div>
+
+        <div class="auth-body">
+          <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter username" />
+          </div>
+
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password" />
+          </div>
+
+          <button class="auth-btn" onclick="handleAuth()">Login</button>
+
+          <p class="switch-text">
+            Don’t have an account?
+            <span onclick="toggleAuth()">Register</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Main App Container ===== -->
+    <main class="app-container">
+      <!-- Task Input Card -->
+      <section class="card">
+        <h2>Add New Task</h2>
+
+        <form id="taskForm" class="task-form">
+          <input
+            type="text"
+            id="taskTitle"
+            placeholder="Enter task title"
+            required
+          />
+
+          <select id="taskPriority">
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+
+          <button type="submit" class="btn-primary">Add Task</button>
+        </form>
+      </section>
+
+      <!-- Task List Card -->
+      <section class="card">
+        <h2>Task List</h2>
+
+        <ul id="taskList" class="task-list">
+          <!-- Tasks added dynamically -->
+        </ul>
+
+        <p
+          id="emptyMessage"
+          class="mt-2"
+          style="text-align: center; color: #64748b"
+        >
+          No tasks added yet
+        </p>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <div class="container footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-col">
+          <h3 class="footer-title">Portfolio</h3>
+          <p class="footer-text">
+            Personal web development portfolio showcasing modern frontend design
+            and interactive project implementations.
+          </p>
+        </div>
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-subtitle">Quick Links</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="../../index.html">Home</a>
+            </li>
+            <li><a href="../../about.html">About</a></li>
+            
+            <li><a href="../../projects.html">Projects</a></li>
+            <li><a href="../../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Social Media -->
+        <div class="footer-col">
+          <h4 class="footer-subtitle">Connect</h4>
+          <div class="social-icons">
+            <a href="https://github.com/mred0" aria-label="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/hemang-rathod-%C2%AB%E2%9F%A8%D0%BC%D1%8F-%EA%8D%9F%EA%80%B8%E2%9F%A9%C2%BB-7a08aa233/"
+              aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright 2026 Portfolio Website</p>
+      </div>
+    </footer>
+
+    <!-- ===== JavaScript ===== -->
+    <script src="planner.js"></script>
+  </body>
+</html>
