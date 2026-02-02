@@ -8,6 +8,7 @@ let tasks = [];
 
 /* ================================
    Load Tasks from Local Storage
+  
 ================================ */
 window.addEventListener("load", () => {
   const savedTasks = localStorage.getItem("taskPlannerTasks");
